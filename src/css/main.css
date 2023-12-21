@@ -1,0 +1,20 @@
+/**
+* main.css : Main layout
+* @see ./variables.css
+* @author Jean-Luc Aubert <jean-luc.aubert@aelion.fr>
+* @date 2023-12-20
+* @version 1.0.0
+*   - Main layout
+*   - Main colors
+**/
+
+/**
+* Import main variables
+*/
+@import './variables.css';
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main-color);
+    font-size: 1em;
+}

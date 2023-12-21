@@ -4,7 +4,8 @@
   "description": "Frontend pure HTML / CSS / JS for Home Stock Manager",
   "main": "src/main.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cypress:open": "cypress open"
   },
   "keywords": [
     "HTML5",
@@ -16,5 +17,8 @@
     "Manager"
   ],
   "author": "Team Atos 2023",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.1"
+  }
 }
