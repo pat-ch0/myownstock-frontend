@@ -1,0 +1,20 @@
+{
+  "name": "myownstock-frontend",
+  "version": "1.0.0",
+  "description": "Frontend pure HTML / CSS / JS for Home Stock Manager",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "JS",
+    "(ES2023)",
+    "Home",
+    "Stock",
+    "Manager"
+  ],
+  "author": "Team Atos 2023",
+  "license": "ISC"
+}

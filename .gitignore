@@ -1,0 +1,15 @@
+# Specific MacOS
+.DS_Store
+
+# Specific VSCode
+.VSCode
+
+# Specific IntelliJ
+.idea
+
+# Builds, objects, dependencies and so on
+dist
+node_modules
+
+# Env vars
+.env
