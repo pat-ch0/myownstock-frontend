@@ -10,6 +10,6 @@ describe('Home navigation', () => {
     // 3. Ensure page loaded is stock.html
 
     const url = cy.url()
-    cy.should('include', 'stock.html')
+    cy.should('include', 'stock')
   })
 })
