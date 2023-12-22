@@ -15,16 +15,21 @@ import { Router } from "./js/router/router.js"
  */
 let main
 
-class Main {
+export class Main {
     #router = null
 
     constructor() {
         this.#run()
     }
 
+    get router() {
+        return this.#router
+    }
+    
     #run() {
         this.#router = new Router()
     }
+
 }
 
 (() => {
