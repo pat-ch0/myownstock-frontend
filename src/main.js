@@ -8,6 +8,7 @@
  * @see Router
  */
 
+import { ProductFixture } from "./js/product-list/product_fixture.js"
 import { Router } from "./js/router/router.js"
 
 /**
@@ -28,6 +29,9 @@ export class Main {
     
     #run() {
         this.#router = new Router()
+        
+        // Load datas as application start
+        new ProductFixture().loadFixture()
     }
 
 }

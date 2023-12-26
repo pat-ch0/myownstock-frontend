@@ -1,5 +1,7 @@
-export class LocalStorage {
-    setData(key, data) {}
+export class LocalStorageWrapper {
+    setData(key, data) {
+        localStorage.setItem(key, JSON.stringify(data))
+    }
 
     getData(key) {
         const datas = localStorage.getItem(key)
@@ -12,5 +14,7 @@ export class LocalStorage {
 
     removeItem(key, item) {}
 
-    removeKey(key) {}
+    removeKey(key) {
+        localStorage.removeItem(key)
+    }
 }
