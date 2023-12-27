@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+import { Product } from "../src/js/product-list/product"
 import { ProductService } from "../src/js/product-list/product-service"
 import { Main } from './../src/main'
 
@@ -22,5 +23,11 @@ describe ('Product service', () => {
         const productService = new ProductService()
         const products = productService.findAll()
         expect(products.length).toEqual(3)
+    })
+
+    it(`Should contains a Product instance`, () => {
+        const productService = new ProductService()
+        const products = productService.findAll()
+        expect(products[0]).toBeInstanceOf(Product)        
     })
 })
