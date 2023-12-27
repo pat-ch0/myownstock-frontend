@@ -5,7 +5,7 @@ export class ProductTile {
      * Product to render
      * @var Product
      */
-    #product = null
+    product = null
 
     #template = `<div class="product-tile">
         <div class="product-thumbnail">
@@ -25,17 +25,18 @@ export class ProductTile {
     `
     setParameter(paramName, value) {
         this[paramName] = value
+        
         return this
     }
 
     render() {
-        if (this.#product) {
+        if (this.product) {
             const thumbnail = this.#getThumbnail()
             this.#template = this.#template.replace(`{{ productThumbnail }}`, thumbnail)
 
-            this.#template = this.#template.replace(`{{ productTitle }}`, this.#product.label)
+            this.#template = this.#template.replace(`{{ productTitle }}`, this.product.label)
 
-            this.#template = this.#template.replace(`{{ productStock }}`, this.#product.stock)
+            this.#template = this.#template.replace(`{{ productStock }}`, this.product.stock)
 
             return this.#template
         }
@@ -44,8 +45,8 @@ export class ProductTile {
     }
 
     #getThumbnail() {
-        if (this.#product.hasOwnProperty('thumbnail')) {
-            return `/assets/images/product/${this.#product.thumbnail}`
+        if (this.product.hasOwnProperty('thumbnail')) {
+            return `/assets/images/product/${this.product.thumbnail}`
         }
 
         return 'assets/images/product/no-image.png'

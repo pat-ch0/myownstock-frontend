@@ -1,3 +1,5 @@
+import { ProductDeserializer } from "./product-deserializer"
+
 export class ProductService {
     /**
      * Name of the localStorage key
@@ -11,7 +13,10 @@ export class ProductService {
      */
     findAll() {
         const dataAsString = localStorage.getItem(this.#productKey)
-        return dataAsString !== null ? JSON.parse(dataAsString) : []
+        if (dataAsString === null) {
+            return []
+        }
+        return ProductDeserializer.deserializeArray(JSON.parse(dataAsString))
     }
 
     findOne(id) {}

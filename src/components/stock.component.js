@@ -1,5 +1,4 @@
 import { ProductService } from './../js/product-list/product-service'
-import { ProductDeserializer } from '../js/product-list/product-deserializer'
 import { ProductTile } from './product-tile'
 /**
  * StockComponent
@@ -48,8 +47,9 @@ export class StockComponent {
     }
 
     #onInit() {
-        this.#products = ProductDeserializer.deserialize(this.#service.findAll())
-            .sort((p1, p2) => p1.localeCompare(p2))
+        this.#products =this.#service.findAll()
+            .sort((p1, p2) => p1.label.localeCompare(p2.label))
+
         for (const product of this.#products) {
             const tile = new ProductTile()
             tile.setParameter('product', product)
