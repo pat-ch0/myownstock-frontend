@@ -1,0 +1,47 @@
+/**
+* product-tile
+* @version 1.0.0
+*   - Flex basis tile
+*/
+
+/* Ajoutez une classe pour styliser chaque produit individuellement */
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Les produits vont passer à la ligne quand ils n'ont plus d'espace */
+}
+
+.product-tile {
+    display: flex;
+    border: 1px solid #ccc;
+    margin: 10px;
+    width: 100%; /* Trois produits par ligne, ajustez en fonction du nombre de produits que vous souhaitez par ligne */
+}
+
+.product-thumbnail {
+    flex: 0 0 2em;
+}
+
+.product-thumbnail figure img {
+    width: 100%;
+    height: auto;
+}
+
+.product-detail {
+    flex: 1;
+    padding: 10px;
+}
+
+.product-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-stock {
+    font-size: .8em;
+}
+
+.stock-label {
+    font-weight: bold;
+    margin-right: 5px;
+}

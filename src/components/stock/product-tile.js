@@ -1,4 +1,4 @@
-import { Product } from "../js/product-list/product"
+import { Product } from "../../js/product-list/product.js"
 
 export class ProductTile {
     /**
@@ -7,7 +7,8 @@ export class ProductTile {
      */
     product = null
 
-    #template = `<div class="product-tile">
+    #template = `
+    <div class="product-tile">
         <div class="product-thumbnail">
             <figure>
                 <img src="{{ productThumbnail }}">
@@ -22,6 +23,7 @@ export class ProductTile {
                 <span class="product-stock">{{ productStock }}
             </div>
         </div>
+    </div>
     `
     setParameter(paramName, value) {
         this[paramName] = value
@@ -32,10 +34,9 @@ export class ProductTile {
     render() {
         if (this.product) {
             const thumbnail = this.#getThumbnail()
+
             this.#template = this.#template.replace(`{{ productThumbnail }}`, thumbnail)
-
             this.#template = this.#template.replace(`{{ productTitle }}`, this.product.label)
-
             this.#template = this.#template.replace(`{{ productStock }}`, this.product.stock)
 
             return this.#template

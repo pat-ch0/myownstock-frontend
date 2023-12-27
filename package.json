@@ -5,7 +5,8 @@
   "main": "src/main.js",
   "scripts": {
     "test": "jest",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "serve": "http-server -c-1 --proxy http://localhost:8080?"
   },
   "keywords": [
     "HTML5",
