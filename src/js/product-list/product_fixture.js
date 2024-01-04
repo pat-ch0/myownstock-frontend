@@ -1,5 +1,5 @@
 import { LocalStorageWrapper } from "../storage/local-storage-wrapper.js"
-import product from './data-fixture.json'
+import product from './data-fixture.json' assert { type: 'json' }
 
 export class ProductFixture {
     #productKey = 'product'

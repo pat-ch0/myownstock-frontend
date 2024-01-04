@@ -1,5 +1,5 @@
-import { HomeComponent } from "../../components/home.component.js"
-import { StockComponent } from "../../components/stock.component.js"
+import { HomeComponent } from "../../components/home/home.component.js"
+import { StockComponent } from "../../components/stock/stock.component.js"
 import { RouteBuilder } from "./route-builder.js"
 export class Router {
     /**

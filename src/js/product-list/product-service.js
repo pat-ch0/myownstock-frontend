@@ -1,4 +1,4 @@
-import { ProductDeserializer } from "./product-deserializer"
+import { ProductDeserializer } from "./product-deserializer.js"
 
 export class ProductService {
     /**
