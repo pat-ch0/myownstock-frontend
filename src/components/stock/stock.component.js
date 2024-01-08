@@ -9,6 +9,7 @@ import { ProductTile } from './product-tile.js'
  * @author Jean-Luc Aubert <jean-luc.aubert@aelion.fr>
  */
 export class StockComponent {
+    #app = null
     /**
      * Component title
      * @var string
@@ -35,28 +36,30 @@ export class StockComponent {
 
     constructor() {
         this.#service = new ProductService()
+        this.#app = document.querySelector('[app]')
     }
 
 
     load() {
         const title = document.querySelector('h1')
         title.innerHTML = this.#title
-        const app = document.querySelector('[app]')
-        this.#onInit()
-        app.innerHTML = this.#template
+        this.#onInit() // Asynchronous mode
     }
 
-    #onInit() {
-        this.#products =this.#service.findAll()
-            .sort((p1, p2) => p1.label.localeCompare(p2.label))
+    async #onInit() {
+        this.#products = await this.#service.findAll()
+        this.#products.sort((p1, p2) => p1.label.localeCompare(p2.label))
+        
         this.#template = `<link rel="stylesheet" href="/src/components/stock/product-tile.css">`
         this.#template += `<div class="product-list" role="list">`
+        
         for (const product of this.#products) {
             const tile = new ProductTile()
             tile.setParameter('product', product)
             this.#template += tile.render()
         }
         this.#template += '</div>'
-
+        
+        this.#app.innerHTML = this.#template
     }
 }
