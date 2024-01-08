@@ -21,6 +21,10 @@
     flex: 0 0 2em;
 }
 
+.product-thumbnail figure {
+    height: 8em;
+    width: 8em;
+}
 .product-thumbnail figure img {
     width: 100%;
     height: auto;
