@@ -5,34 +5,17 @@ export class ProductService {
      * Name of the localStorage key
      * @var string
      */
-    #productKey = 'product'
+    #productKey = 'products'
     
     /**
      * Returns all products for the defined key
      * @returns array
      */
     async findAll() {
-        //const dataAsString = localStorage.getItem(this.#productKey)
-        /* const dataAsString = fetch('http://localhost:8080/products')
-        if (dataAsString === null) {
-            return []
-        }
-        return ProductDeserializer.deserializeArray(JSON.parse(dataAsString)) */
-
-        try {
-            const response = await fetch('http://localhost:8080/products');
+        const response = await fetch(`http://localhost:8080/${this.#productKey}`);
+        const data = await response.json();
             
-            if (!response.ok) {
-                throw new Error(`Erreur lors de la récupération des produits: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            
-            return ProductDeserializer.deserializeArray(data);
-        } catch (error) {
-            console.error('Erreur lors de la récupération des produits:', error);
-            return [];
-        }
+        return ProductDeserializer.deserializeArray(data); // json to product object
     }
 
     findOne(id) {}
