@@ -5,18 +5,17 @@ export class ProductService {
      * Name of the localStorage key
      * @var string
      */
-    #productKey = 'product'
+    #productKey = 'products'
     
     /**
      * Returns all products for the defined key
      * @returns array
      */
-    findAll() {
-        const dataAsString = localStorage.getItem(this.#productKey)
-        if (dataAsString === null) {
-            return []
-        }
-        return ProductDeserializer.deserializeArray(JSON.parse(dataAsString))
+    async findAll() {
+        const response = await fetch(`http://localhost:8080/${this.#productKey}`);
+        const data = await response.json();
+            
+        return ProductDeserializer.deserializeArray(data); // json to product object
     }
 
     findOne(id) {}
