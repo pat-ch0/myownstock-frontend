@@ -20,7 +20,7 @@ export class ProductService {
      */
     async findAll() {
         const payload = await this.#httpClient.get(
-            'http://localhost:8080/products'
+            Config.API_ROUTES.get('all_product')
         )
         
         return ProductDeserializer.deserializeArray(payload)
