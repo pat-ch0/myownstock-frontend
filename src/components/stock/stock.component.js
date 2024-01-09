@@ -10,6 +10,7 @@ import { ProductTile } from './product-tile.js'
  */
 export class StockComponent {
     #app = null
+
     /**
      * Component title
      * @var string
@@ -39,7 +40,6 @@ export class StockComponent {
         this.#app = document.querySelector('[app]')
     }
 
-
     load() {
         const title = document.querySelector('h1')
         title.innerHTML = this.#title
@@ -59,7 +59,7 @@ export class StockComponent {
             this.#template += tile.render()
         }
         this.#template += '</div>'
-        
+
         this.#app.innerHTML = this.#template
     }
 }
