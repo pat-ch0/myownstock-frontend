@@ -1,9 +1,6 @@
 export class HttpClient {
     async get(uri, observeResponse = false) {
-        const response = fetch(
-            uri
-        )
-
+        const response = fetch(uri)
         if (observeResponse) {
             return response
         }
