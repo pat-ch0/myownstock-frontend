@@ -1,5 +1,3 @@
-import { Product } from "../../js/product-list/product.js"
-
 export class ProductTile {
     /**
      * Product to render
