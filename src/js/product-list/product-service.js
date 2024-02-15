@@ -7,7 +7,6 @@ export class ProductService {
      * @var string
      */
     #productKey = 'products'
-    
     #httpClient = null
 
     constructor() {
@@ -18,6 +17,11 @@ export class ProductService {
      * @returns array
      */
     async findAll() {
+        /* const response = await fetch(`http://localhost:8080/${this.#productKey}`);
+        const data = await response.json();
+            
+        return ProductDeserializer.deserializeArray(data); // json to product object */
+        
         const payload = await this.#httpClient.get(
             Config.API_ROUTES.get('all_product')
         )
