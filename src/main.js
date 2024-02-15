@@ -8,13 +8,18 @@
  * @see Router
  */
 
-import { ProductFixture } from "./js/product-list/product_fixture.js"
-import { Router } from "./js/router/router.js"
+import { ProductFixture } from "./js/product-list/product_fixture"
+import { Router } from "./js/router/router"
 
 /**
  * Class instance of Main
  */
 let main
+
+/**
+ * Load CSS as neede
+ */
+import './css/main.css'
 
 export class Main {
     #router = null
