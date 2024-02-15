@@ -19,7 +19,7 @@ export class ProductService {
     async findAll() {
         /* const response = await fetch(`http://localhost:8080/${this.#productKey}`);
         const data = await response.json();
-            
+        
         return ProductDeserializer.deserializeArray(data); // json to product object */
         
         const payload = await this.#httpClient.get(

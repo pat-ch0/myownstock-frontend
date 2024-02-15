@@ -1,3 +1,4 @@
+import { AddComponent } from "../../components/add/add.component.js"
 import { HomeComponent } from "../../components/home/home.component.js"
 import { StockComponent } from "../../components/stock/stock.component.js"
 import { RouteBuilder } from "./route-builder.js"
@@ -65,7 +66,14 @@ export class Router {
                 .component(new StockComponent())
                 .title('My Stock')
                 .build() 
-            )        
+            )
+            this.#routes.push(
+                routeBuilder
+                .path('/add')
+                .component(new AddComponent())
+                .title('Add a product')
+                .build()
+            )       
         } catch(error) {
             console.log(error)
         }
