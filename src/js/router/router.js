@@ -1,6 +1,7 @@
 import { HomeComponent } from "../../components/home/home.component.js"
 import { StockComponent } from "../../components/stock/stock.component.js"
 import { RouteBuilder } from "./route-builder.js"
+
 export class Router {
     /**
      * Route collection
@@ -13,6 +14,7 @@ export class Router {
         this.#onLoad()
         this.#handleClick()
     }
+
     #onLoad() {
         window.addEventListener('DOMContentLoaded', () => {
             // Default route to Home
@@ -22,6 +24,7 @@ export class Router {
             }
         })
     }
+    
     #handleClick() {
         window.addEventListener('click', (event) => {
             const target = event.target.closest('a')
